@@ -1,6 +1,6 @@
 //
-//  NHRangeSliderView.swift
-//  NHRangeSlider
+//  AGRangeSliderView.swift
+//  AGRangeSlider
 //
 //  Created by Hung on 17/12/16.
 //  Copyright © 2016 Hung. All rights reserved.
@@ -18,25 +18,25 @@ public enum NHSliderLabelStyle : Int {
 }
 
 /// delegate for changed value
-public protocol NHRangeSliderViewDelegate: class {
+public protocol AGRangeSliderViewDelegate: class {
     /// slider value changed
-    func sliderValueChanged(slider: NHRangeSlider?)
+    func sliderValueChanged(slider: AGRangeSlider?)
 }
 
 /// optional implementation
-public extension NHRangeSliderViewDelegate{
-    func sliderValueChanged(slider: NHRangeSlider?){}
+public extension AGRangeSliderViewDelegate{
+    func sliderValueChanged(slider: AGRangeSlider?){}
 }
 
 /// Range slider with labels for upper and lower thumbs, title label and configurable step value (optional)
-open class NHRangeSliderView: UIView {
+open class AGRangeSliderView: UIView {
 
     //MARK: properties
     
-    open var delegate: NHRangeSliderViewDelegate? = nil
+    open var delegate: AGRangeSliderViewDelegate? = nil
     
     /// Range slider
-    open var rangeSlider : NHRangeSlider? = nil
+    open var rangeSlider : AGRangeSlider? = nil
     
     /// Display title
     open var titleLabel : UILabel? = nil
@@ -206,7 +206,7 @@ open class NHRangeSliderView: UIView {
         self.upperLabel?.textAlignment = .center
         self.addSubview(self.upperLabel!)
         
-        self.rangeSlider = NHRangeSlider(frame: .zero)
+        self.rangeSlider = AGRangeSlider(frame: .zero)
         self.addSubview(self.rangeSlider!)
         
         self.updateLabelDisplay()
@@ -220,7 +220,7 @@ open class NHRangeSliderView: UIView {
     /// Selected value for filterItem will also be updated
     ///
     /// - Parameter rangeSlider: the changed rangeSlider
-    @objc open func rangeSliderValueChanged(_ rangeSlider: NHRangeSlider) {
+    @objc open func rangeSliderValueChanged(_ rangeSlider: AGRangeSlider) {
        
         delegate?.sliderValueChanged(slider: rangeSlider)
         
@@ -261,7 +261,7 @@ open class NHRangeSliderView: UIView {
             let commonWidth = self.bounds.width
             var titleLabelMaxY : CGFloat = 0
             
-            if !titleLabel.isHidden && titleLabel.text != nil && titleLabel.text!.characters.count > 0 {
+            if !titleLabel.isHidden && titleLabel.text != nil && titleLabel.text!.count > 0 {
                 titleLabel.frame = CGRect(x: 0,
                                           y: 0,
                                           width: commonWidth  ,
@@ -315,7 +315,7 @@ open class NHRangeSliderView: UIView {
             
             var titleLabelMaxY : CGFloat = 0
             
-            if !titleLabel.isHidden && titleLabel.text != nil && titleLabel.text!.characters.count > 0 {
+            if !titleLabel.isHidden && titleLabel.text != nil && titleLabel.text!.count > 0 {
                 titleLabelMaxY = titleLabel.font.lineHeight + self.spacing
             }
             

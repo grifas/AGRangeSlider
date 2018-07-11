@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import NHRangeSlider
+import AGRangeSlider
 
 class ViewController: UIViewController {
 
@@ -16,11 +16,11 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         // default slider
-        let sliderView = NHRangeSliderView(frame: CGRect(x: 16, y: 20, width: self.view.bounds.width - 32, height: 80) )
+        let sliderView = AGRangeSliderView(frame: CGRect(x: 16, y: 20, width: self.view.bounds.width - 32, height: 80) )
         sliderView.sizeToFit()
         self.view.addSubview(sliderView)
         
-        let sliderSquareView = NHRangeSliderView(frame: CGRect(x: 16, y: sliderView.frame.maxY + 8,
+        let sliderSquareView = AGRangeSliderView(frame: CGRect(x: 16, y: sliderView.frame.maxY + 8,
                                                                width: sliderView.frame.size.width,
                                                                height: sliderView.frame.size.height) )
         sliderSquareView.curvaceousness = 0.0
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         self.view.addSubview(sliderSquareView)
         
         
-        let sliderSquareWithLabelView = NHRangeSliderView(frame: CGRect(x: 16, y: sliderSquareView.frame.maxY + 8,
+        let sliderSquareWithLabelView = AGRangeSliderView(frame: CGRect(x: 16, y: sliderSquareView.frame.maxY + 8,
                                                                         width: sliderView.frame.size.width,
                                                                         height: sliderView.frame.size.height) )
         sliderSquareWithLabelView.curvaceousness = 0.0
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         self.view.addSubview(sliderSquareWithLabelView)
         
         // slider with labels following the text
-        let sliderWithLabelFollowView = NHRangeSliderView(frame: CGRect(x: 16, y: sliderSquareWithLabelView.frame.maxY + 8,
+        let sliderWithLabelFollowView = AGRangeSliderView(frame: CGRect(x: 16, y: sliderSquareWithLabelView.frame.maxY + 8,
                                                                         width: sliderView.frame.size.width,
                                                                         height: sliderView.frame.size.height) )
         sliderWithLabelFollowView.trackHighlightTintColor = UIColor.black
@@ -58,7 +58,7 @@ class ViewController: UIViewController {
         self.view.addSubview(sliderWithLabelFollowView)
         
         // custom string format example
-        let sliderCustomStringView = NHRangeSliderView(frame: CGRect(x: 16, y: sliderWithLabelFollowView.frame.maxY + 8,
+        let sliderCustomStringView = AGRangeSliderView(frame: CGRect(x: 16, y: sliderWithLabelFollowView.frame.maxY + 8,
                                                                         width: sliderView.frame.size.width,
                                                                         height: sliderView.frame.size.height) )
         sliderCustomStringView.trackHighlightTintColor = UIColor.black

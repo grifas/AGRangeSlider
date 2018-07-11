@@ -1,6 +1,6 @@
 //
-//  NHRangeSlider.swift
-//  NHRangeSlider
+//  AGRangeSlider.swift
+//  AGRangeSlider
 //
 //  Created by Hung on 17/12/16.
 //  Copyright © 2016 Hung. All rights reserved.
@@ -13,7 +13,7 @@ import QuartzCore
 public class RangeSliderTrackLayer: CALayer {
     
     /// owner slider
-    weak var rangeSlider: NHRangeSlider?
+    weak var rangeSlider: AGRangeSlider?
     
     /// draw the track between 2 thumbs
     ///
@@ -46,7 +46,7 @@ public class RangeSliderTrackLayer: CALayer {
 public class RangeSliderThumbLayer: CALayer {
     
     /// owner slider
-    weak var rangeSlider: NHRangeSlider?
+    weak var rangeSlider: AGRangeSlider?
     
     /// whether this thumb is currently highlighted i.e. touched by user
     public var highlighted: Bool = false {
@@ -104,14 +104,14 @@ public class RangeSliderThumbLayer: CALayer {
 
 /// Range slider view with upper, lower bounds
 @IBDesignable
-open class NHRangeSlider: UIControl {
+open class AGRangeSlider: UIControl {
     
     //MARK: properties
     
     /// minimum value
     @IBInspectable open var minimumValue: Double = 0.0 {
         willSet(newValue) {
-            assert(newValue < maximumValue, "NHRangeSlider: minimumValue should be lower than maximumValue")
+            assert(newValue < maximumValue, "AGRangeSlider: minimumValue should be lower than maximumValue")
         }
         didSet {
             updateLayerFrames()
@@ -121,7 +121,7 @@ open class NHRangeSlider: UIControl {
     /// max value
     @IBInspectable open var maximumValue: Double = 100.0 {
         willSet(newValue) {
-            assert(newValue > minimumValue, "NHRangeSlider: maximumValue should be greater than minimumValue")
+            assert(newValue > minimumValue, "AGRangeSlider: maximumValue should be greater than minimumValue")
         }
         didSet {
             updateLayerFrames()
@@ -153,7 +153,7 @@ open class NHRangeSlider: UIControl {
     @IBInspectable open var stepValue: Double = 0 {
         willSet(newValue) {
             if newValue != 0 {
-                assert(newValue > 0, "NHRangeSlider: stepValue must be positive")
+                assert(newValue > 0, "AGRangeSlider: stepValue must be positive")
             }
         }
         didSet {
